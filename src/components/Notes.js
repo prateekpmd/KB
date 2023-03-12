@@ -14,8 +14,8 @@ const Notes = ({ clientName, notesl, salutation }) => {
 
       <div className="flex flex-col justify-left items-left">
         <p className="mt-4  mb-1">Dear {salutation},</p>
-        <p className="mt-1 ml-20 mb-1">
-          We are pleased to quote our most resonable rate for the following :
+        <p className=" ml-16 mb-1">
+          We are pleased to quote you our most resonable rate for the following :
         </p>
       </div>
       {/* 
