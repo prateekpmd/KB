@@ -11,28 +11,28 @@ import Tax from "./components/Tax";
 import Tax1 from "./components/Tax1";
 import GrandTotal from "./components/GrandTotal";
 import CompanyHeader from "./components/CompanyHeader";
-import TermsAndCondition from "./components/TermsAndCondition";
+// import TermsAndCondition from "./components/TermsAndCondition";
 import ReactToPrint from "react-to-print";
-import { jsPDF } from "jspdf";
-import PrintButton from "./components/PrintButton";
-import { BiLastPage } from "react-icons/bi";
-import html2pdf from "html2pdf.js";
+// import { jsPDF } from "jspdf";
+// import PrintButton from "./components/PrintButton";
+// import { BiLastPage } from "react-icons/bi";
+// import html2pdf from "html2pdf.js";
 
 const App = () => {
   const [showInvoice, setShowInvoice] = useState(false);
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [bankName, setBankName] = useState("");
-  const [bankAccount, setbankAccount] = useState("");
+  // const [name, setName] = useState("");
+  // const [address, setAddress] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [phone, setPhone] = useState("");
+  // const [bankName, setBankName] = useState("");
+  // const [bankAccount, setbankAccount] = useState("");
   const [clientName, setClientName] = useState("");
   const [clientAddress, setClientAddress] = useState("");
-  const [invoiceNumber, setInvoiceNumber] = useState("");
-  const [invoiceDate, setInvoiceDate] = useState("");
+  // const [invoiceNumber, setInvoiceNumber] = useState("");
+  // const [invoiceDate, setInvoiceDate] = useState("");
   const [dueDate, setDueDate] = useState("");
-  const [subject, setSubject] = useState("");
-  const [notes, setNotes] = useState("");
+  // const [subject, setSubject] = useState("");
+  // const [notes, setNotes] = useState("");
   const [description, setDescription] = useState("");
   const [serialNumber, setSerialNumber] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -69,22 +69,22 @@ const App = () => {
   let cYear = currentDate.getFullYear();
   const datee = `KB_ ${clientName}(${cDay}.${cMonth}.${cYear})[${time}]`;
 
-  const handleDownload = () => {
-    const hell = componentRef.current;
+  // const handleDownload = () => {
+  //   const hell = componentRef.current;
 
-    var doc = new jsPDF({
-      unit: "px",
-      format: "a4",
-    });
+  //   var doc = new jsPDF({
+  //     unit: "px",
+  //     format: "a4",
+  //   });
 
-    doc.html(hell, {
-      callback: function(doc) {
-        doc.save(`${datee}.pdf`);
-      },
-    });
-  };
+  //   doc.html(hell, {
+  //     callback: function(doc) {
+  //       doc.save(`${datee}.pdf`);
+  //     },
+  //   });
+  // };
 
-  const woww=document.getElementById('wow');
+  // const woww=document.getElementById('wow');
     useEffect(() => {
       window.onbeforeprint= addPageNumbers;
       function addPageNumbers() {
@@ -192,8 +192,7 @@ const App = () => {
                   />
 
                   <Notes
-                    subject={subject}
-                    notes={notes}
+                    
                     clientName={clientName}
                   />
                   <Tables
