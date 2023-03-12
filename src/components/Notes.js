@@ -13,7 +13,7 @@ const Notes = ({ clientName, notesl }) => {
       </div>
 
       <div className="flex flex-col justify-left items-left">
-        <p className="mt-4 ml-10 mb-1">Dear,</p>
+        <p className="mt-4  mb-1">Dear,</p>
         <p className="mt-1 ml-20 mb-1">
           We are pleased to quote our most resonable rate for the following :
         </p>
