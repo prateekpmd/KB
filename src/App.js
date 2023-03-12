@@ -309,7 +309,7 @@ const App = () => {
               name="notesl"
               id="notesl"
               value={notesl}
-              placeholder="Please Enter Client's Company Address"
+              placeholder="Please Enter Subject"
               autoComplete="off"
               onChange={(e) => setNotesL(e.target.value)}
             />
