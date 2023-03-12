@@ -22,7 +22,7 @@ const Tables = ({
   return (
     <div className="pb-4 mt-4">
       <table
-        style={{ pageBreakAfter: "always" }}
+        
         className="border-collapse border border-slate-500 mb-4 table-auto lg:text-sm md:text-sm my-1"
         width="100%"
       >
