@@ -146,7 +146,7 @@ const TableForm = ({
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="price">Each Unit Rate (Rs.)</label>
+            <label htmlFor="price">Unit Rate (Rs.)</label>
             <input
               required
               type="number"

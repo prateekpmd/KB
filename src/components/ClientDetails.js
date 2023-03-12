@@ -32,7 +32,7 @@ const ClientDetails = ({ clientName, clientAddress, dueDate }) => {
       </section>
       <section className="  lg:text-sm xl:text-sm text-md md:text-sm sm:text-sm mt-4 ">
         <p className=" text-right md:text-sm sm:text-sm items-end normal-case ">
-          <span className="font-bold">Date: </span>
+          <span className="font-bold">DATE: </span>
           <span>{dueDate}</span>{" "}
         </p>
       </section>

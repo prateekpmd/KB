@@ -38,8 +38,8 @@ const Footer = ({
         <div className="">
           {noteToggle ? (
             <div className="lg:text-sm md:text-sm">
-              <div className="font-bold text-md"> Note:</div>
-              <span>{noteToggle}</span>
+              <div className="font-bold text-md mb-1"> Note:</div>
+              <span className="">{noteToggle}.</span>
             </div>
           ) : (
             ""
@@ -53,9 +53,6 @@ const Footer = ({
             <h1 className="text-center font-bold text-md mt-3">
               [Kuldeep Yadav]{" "}
             </h1>
-            <div className="hello">
-              
-            </div>
           </div>
         </div>
       </div>

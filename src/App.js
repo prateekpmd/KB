@@ -1,4 +1,4 @@
-import React, { useState, useRef,useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ClientDetails from "./components/ClientDetails";
 // import Dates from "./components/Dates";
 // import Header from "./components/Header";
@@ -28,6 +28,7 @@ const App = () => {
   // const [bankAccount, setbankAccount] = useState("");
   const [clientName, setClientName] = useState("");
   const [clientAddress, setClientAddress] = useState("");
+  const [salutation, setSalutation] = useState("Sir");
   // const [invoiceNumber, setInvoiceNumber] = useState("");
   // const [invoiceDate, setInvoiceDate] = useState("");
   const [dueDate, setDueDate] = useState("");
@@ -40,7 +41,7 @@ const App = () => {
   const [amount, setAmount] = useState("");
   const [total, setTotal] = useState("");
   const [list, setList] = useState([]);
-  const [notesl,setNotesL]=useState("");
+  const [notesl, setNotesL] = useState("");
 
   const [sgsttax, setSGstTax] = useState("");
   const [local, setLocal] = useState("");
@@ -86,29 +87,28 @@ const App = () => {
   // };
 
   // const woww=document.getElementById('wow');
-    useEffect(() => {
-      window.onbeforeprint= addPageNumbers;
-      function addPageNumbers() {
-        var totalPages = Math.ceil(document.body.scrollHeight / 1123); //842px A4 pageheight for 72dpi, 1123px A4 pageheight for 96dpi,
-        for (var i = 1; i <= totalPages; i++) {
-          var pageNumberDiv = document.createElement("div");
-          var pageNumber = document.createTextNode(
-            "Page " + i + " of " + totalPages
-          );
-          pageNumberDiv.style.position = "absolute";
-          pageNumberDiv.style.top =
-            "calc((" + i + " * (297mm - 0.5px)) - 40px)"; //297mm A4 pageheight; 0,5px unknown needed necessary correction value; additional wanted 40px margin from bottom(own element height included)
-          pageNumberDiv.style.height = "16px";
-          pageNumberDiv.appendChild(pageNumber);
-          document.body.insertBefore(
-            pageNumberDiv,
-            document.getElementById("main")
-          );
-          pageNumberDiv.style.center =
-            "calc(100% - (" + pageNumberDiv.offsetWidth + "px +20px))";
-        }
+  useEffect(() => {
+    window.onbeforeprint = addPageNumbers;
+    function addPageNumbers() {
+      var totalPages = Math.ceil(document.body.scrollHeight / 1123); //842px A4 pageheight for 72dpi, 1123px A4 pageheight for 96dpi,
+      for (var i = 1; i <= totalPages; i++) {
+        var pageNumberDiv = document.createElement("div");
+        var pageNumber = document.createTextNode(
+          "Page " + i + " of " + totalPages
+        );
+        pageNumberDiv.style.position = "absolute";
+        pageNumberDiv.style.top = "calc((" + i + " * (297mm - 0.5px)) - 40px)"; //297mm A4 pageheight; 0,5px unknown needed necessary correction value; additional wanted 40px margin from bottom(own element height included)
+        pageNumberDiv.style.height = "16px";
+        pageNumberDiv.appendChild(pageNumber);
+        document.body.insertBefore(
+          pageNumberDiv,
+          document.getElementById("main")
+        );
+        pageNumberDiv.style.center =
+          "calc(100% - (" + pageNumberDiv.offsetWidth + "px +20px))";
       }
-    }, [showInvoice]);
+    }
+  }, [showInvoice]);
 
   return (
     <>
@@ -193,7 +193,11 @@ const App = () => {
                     clientAddress={clientAddress}
                   />
 
-                  <Notes clientName={clientName} notesl={notesl} />
+                  <Notes
+                    salutation={salutation}
+                    clientName={clientName}
+                    notesl={notesl}
+                  />
                   <Tables
                     local={local}
                     local1={local1}
@@ -240,18 +244,7 @@ const App = () => {
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              <div className="flex flex-col ">
-                <label htmlFor="noteToggle"> Enter Note</label>
-                <input
-                  type="text"
-                  name="noteToggle"
-                  id="noteToggle"
-                  value={noteToggle}
-                  placeholder="Please Enter Note"
-                  autoComplete="off"
-                  onChange={(e) => setNoteToggle(e.target.value)}
-                />
-              </div>
+             
               <div className="flex flex-col">
                 <label htmlFor="email">Enter Email</label>
                 <input
@@ -265,7 +258,19 @@ const App = () => {
                 />
               </div>
             </article> */}
-            <article className="sm:grid grid-cols-2 gap-10 ">
+            <article className="sm:grid grid-cols-3 gap-10 ">
+              <div className="flex flex-col ">
+                <label htmlFor="salutation">Salutation</label>
+
+                <select
+                  id="salutation"
+                  value={salutation}
+                  onChange={(e) => setSalutation(e.target.value)}
+                >
+                  <option value="Sir">Sir</option>
+                  <option value="Madam">Madam</option>
+                </select>
+              </div>
               <div className="flex flex-col ">
                 <label htmlFor="clientName">Enter Client's Name</label>
                 <input
@@ -312,6 +317,17 @@ const App = () => {
               placeholder="Please Enter Subject"
               autoComplete="off"
               onChange={(e) => setNotesL(e.target.value)}
+            />
+
+            <label htmlFor="noteToggle"> Enter Note</label>
+            <input
+              type="text"
+              name="noteToggle"
+              id="noteToggle"
+              value={noteToggle}
+              placeholder="Please Enter Note"
+              autoComplete="off"
+              onChange={(e) => setNoteToggle(e.target.value)}
             />
 
             {/* <label htmlFor="phone">Enter Phone Number</label>

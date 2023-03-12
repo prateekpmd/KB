@@ -1,6 +1,6 @@
 import React from "react";
 
-const Notes = ({ clientName, notesl }) => {
+const Notes = ({ clientName, notesl, salutation }) => {
   return (
     <section className="my-4 lg:text-sm xl:text-sm md:text-sm sm:text-sm flex flex-col  lg:max-w-4xl ">
       <div className="flex justify-center items-center ">
@@ -13,7 +13,7 @@ const Notes = ({ clientName, notesl }) => {
       </div>
 
       <div className="flex flex-col justify-left items-left">
-        <p className="mt-4  mb-1">Dear,</p>
+        <p className="mt-4  mb-1">Dear {salutation},</p>
         <p className="mt-1 ml-20 mb-1">
           We are pleased to quote our most resonable rate for the following :
         </p>
