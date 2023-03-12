@@ -214,7 +214,7 @@ const TableForm = ({
                   <td className="border" align="center">
                     ₹ {le.price}
                   </td>
-                  <td className="border" align="center">
+                  <td className="border text-center">
                     ₹ {valAmount}
                   </td>
                   <td

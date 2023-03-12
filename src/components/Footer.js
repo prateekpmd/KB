@@ -50,7 +50,7 @@ const Footer = ({
             <h3 className=" text-center text-md mb-1">Thanking You, </h3>
             <h1 className="  text-center text-md mb-1">Yours Faithfully, </h1>
             <h1 className="text-center text-md mb-1">From K.B. Enterprices </h1>
-            <h1 className="text-center font-bold text-md mt-3">
+            <h1 className="text-center font-bold text-md mt-1">
               [Kuldeep Yadav]{" "}
             </h1>
           </div>
