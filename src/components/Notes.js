@@ -1,6 +1,6 @@
 import React from "react";
 
-const Notes = ({ clientName }) => {
+const Notes = ({ clientName, notesl }) => {
   return (
     <section className="my-4 lg:text-sm xl:text-sm md:text-sm sm:text-sm flex flex-col  lg:max-w-4xl ">
       <div className="flex justify-center items-center ">
@@ -8,16 +8,15 @@ const Notes = ({ clientName }) => {
           <h2 className=" text-center font-bold md:text-md lg:text-md xl:text-md text-md uppercase">
             Subject :
           </h2>{" "}
-          <span className="ml-2">
-            {" "}
-             Quotation For {clientName}.{" "}
-          </span>
+          <span className="ml-2"> {notesl}. </span>
         </p>
       </div>
 
       <div className="flex flex-col justify-left items-left">
         <p className="mt-4 ml-10 mb-1">Dear,</p>
-        <p className="mt-1 ml-20 mb-1">We are pleased to quote our most  resonable rate for the following :</p>
+        <p className="mt-1 ml-20 mb-1">
+          We are pleased to quote our most resonable rate for the following :
+        </p>
       </div>
       {/* 
       <p className="lg:max-w-3xl ml-10"> {notes}</p>

@@ -40,6 +40,7 @@ const App = () => {
   const [amount, setAmount] = useState("");
   const [total, setTotal] = useState("");
   const [list, setList] = useState([]);
+  const [notesl,setNotesL]=useState("");
 
   const [sgsttax, setSGstTax] = useState("");
   const [local, setLocal] = useState("");
@@ -115,26 +116,27 @@ const App = () => {
         {showInvoice ? (
           <>
             <>
-            
-                {/* <PrintButton datee={datee} id={"invoice"} /> */}
-                <ReactToPrint
-                 
-                  pageStyle="@page { 
+              {/* <PrintButton datee={datee} id={"invoice"} /> */}
+              <ReactToPrint
+                pageStyle="@page { 
                   padding:0 0 10%,
                    margin=5%,
                    } 
                  }"
-                  trigger={() => (
-                    <div className="flex flex-end">
-                      <button style={{marginLeft:"auto"}} className=" text-right  mt-1 bg-red-500 text-white  font-bold px-4 py-2 rounded shadow border-2 hover:text-red-500 hover:bg-transparent  hover:border-red-500  transition-all duration-250">
-                        Print
-                      </button>
-                    </div>
-                  )}
-                  content={() => componentRef.current}
-                  documentTitle={datee}
-                />
-            
+                trigger={() => (
+                  <div className="flex flex-end">
+                    <button
+                      style={{ marginLeft: "auto" }}
+                      className=" text-right  mt-1 bg-red-500 text-white  font-bold px-4 py-2 rounded shadow border-2 hover:text-red-500 hover:bg-transparent  hover:border-red-500  transition-all duration-250"
+                    >
+                      Print
+                    </button>
+                  </div>
+                )}
+                content={() => componentRef.current}
+                documentTitle={datee}
+              />
+
               {/* <button
                 onClick={() => {
                   html2pdf()
@@ -178,7 +180,7 @@ const App = () => {
                 >
                   {/* <Header /> */}
                   <CompanyHeader />
-                 
+
                   {/* <Dates
                     invoiceNumber={invoiceNumber}
                   invoiceDate={invoiceDate}
@@ -191,10 +193,7 @@ const App = () => {
                     clientAddress={clientAddress}
                   />
 
-                  <Notes
-                    
-                    clientName={clientName}
-                  />
+                  <Notes clientName={clientName} notesl={notesl} />
                   <Tables
                     local={local}
                     local1={local1}
@@ -303,6 +302,16 @@ const App = () => {
               placeholder="Please Enter Client's Company Address"
               autoComplete="off"
               onChange={(e) => setClientAddress(e.target.value)}
+            />
+            <label htmlFor="notesl">Enter Subject</label>
+            <input
+              type="text"
+              name="notesl"
+              id="notesl"
+              value={notesl}
+              placeholder="Please Enter Client's Company Address"
+              autoComplete="off"
+              onChange={(e) => setNotesL(e.target.value)}
             />
 
             {/* <label htmlFor="phone">Enter Phone Number</label>
