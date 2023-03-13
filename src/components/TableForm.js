@@ -87,10 +87,10 @@ const TableForm = ({
     <>
       <form
         onSubmit={submitHandler}
-        className="lg:text-sm xl:text-sm md:text-sm sm:text-sm border-t-2 border-gray-300 pt-5 "
+        className="lg:text-sm xl:text-sm md:text-sm sm:text-sm border-t-2 border-gray-300 mt-8  pt-5 "
       >
        
-        <div className="md:grid grid-cols-2 gap-10">
+        <div className="md:grid grid-cols-2 gap-10 mt-4">
           <div className="flex flex-col flex-auto ">
             <label htmlFor="serialNumber">S. No.</label>
             <input

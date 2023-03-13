@@ -13,8 +13,10 @@ import GrandTotal from "./components/GrandTotal";
 import CompanyHeader from "./components/CompanyHeader";
 // import TermsAndCondition from "./components/TermsAndCondition";
 import ReactToPrint from "react-to-print";
+
 // import Tax3 from "./components/Tax3";
-import Justin from "./components/Justin.js";
+import Netlify from "./components/Netlify";
+
 
 // import { jsPDF } from "jspdf";
 // import PrintButton from "./components/PrintButton";
@@ -342,7 +344,8 @@ const App = () => {
               onChange={(e) => setNoteToggle(e.target.value)}
             />
 
-            <Justin
+          
+            <Netlify
               noteQuantifier={noteQuantifier}
               setNoteQuantifier={setNoteQuantifier}
               listall={listall}

@@ -59,7 +59,7 @@ const Tax = ({
   const [show, setShow] = useState(true);
 
   return (
-    <div className="mb-7 flex flex-col lg:text-sm xl:text-sm md:text-sm sm:text-sm">
+    <div className="mb-7 flex flex-col lg:text-sm xl:text-sm md:text-sm mt-4 sm:text-sm">
       <div className="flex justify-center items-center">
         {" "}
         <h1
