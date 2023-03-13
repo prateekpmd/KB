@@ -8,11 +8,14 @@ import Tables from "./components/Tables";
 import Footer from "./components/Footer";
 import TableForm from "./components/TableForm";
 import Tax from "./components/Tax";
-import Tax1 from "./components/Tax1";
+// import Tax1 from "./components/Tax1";
 import GrandTotal from "./components/GrandTotal";
 import CompanyHeader from "./components/CompanyHeader";
 // import TermsAndCondition from "./components/TermsAndCondition";
 import ReactToPrint from "react-to-print";
+// import Tax3 from "./components/Tax3";
+import Justin from "./components/Justin";
+
 // import { jsPDF } from "jspdf";
 // import PrintButton from "./components/PrintButton";
 // import { BiLastPage } from "react-icons/bi";
@@ -20,6 +23,8 @@ import ReactToPrint from "react-to-print";
 
 const App = () => {
   const [showInvoice, setShowInvoice] = useState(false);
+  const[noteQuantifier,setNoteQuantifier]=useState("");
+  const[listall,setListAll]=useState("");
   // const [name, setName] = useState("");
   // const [address, setAddress] = useState("");
   // const [email, setEmail] = useState("");
@@ -47,6 +52,8 @@ const App = () => {
   const [local, setLocal] = useState("");
   const [cgsttax, setCgstTax] = useState("");
   const [local1, setLocal1] = useState("");
+  const [igsttax,setIgstTax]=useState("");
+  const [local2, setLocal2] = useState("");
   const [grand, setGrand] = useState("");
   const [unit, setUnit] = useState("");
   const [noteToggle, setNoteToggle] = useState("");
@@ -199,8 +206,13 @@ const App = () => {
                     notesl={notesl}
                   />
                   <Tables
+                    listall={listall}
+                    cgsttax={cgsttax}
+                    sgsttax={sgsttax}
+                    igsttax={igsttax}
                     local={local}
                     local1={local1}
+                    local2={local2}
                     description={description}
                     serialNumber={serialNumber}
                     quantity={quantity}
@@ -211,7 +223,7 @@ const App = () => {
                     setTotal={setTotal}
                     grand={grand}
                   />
-                  <div id="hijda"></div>
+
                   <Footer
                     noteToggle={noteToggle}
                     setNoteToggle={setNoteToggle}
@@ -279,7 +291,7 @@ const App = () => {
                   name="clientName"
                   id="clientName"
                   value={clientName}
-                  placeholder="Please Enter Client's Company Name"
+                  placeholder="Enter Client's Company Name"
                   autoComplete="off"
                   onChange={(e) => setClientName(e.target.value)}
                 />
@@ -291,7 +303,7 @@ const App = () => {
                   name="dueDate"
                   id="dueDate"
                   value={dueDate}
-                  placeholder="Please Enter The Invoice Due Number"
+                  placeholder="Enter The Invoice Due Number"
                   autoComplete="off"
                   onChange={(e) => setDueDate(e.target.value)}
                 />
@@ -304,7 +316,7 @@ const App = () => {
               name="clientAddress"
               id="clientAddress"
               value={clientAddress}
-              placeholder="Please Enter Client's Company Address"
+              placeholder="Enter Client's Company Address"
               autoComplete="off"
               onChange={(e) => setClientAddress(e.target.value)}
             />
@@ -314,7 +326,7 @@ const App = () => {
               name="notesl"
               id="notesl"
               value={notesl}
-              placeholder="Please Enter Subject"
+              placeholder="Enter Subject"
               autoComplete="off"
               onChange={(e) => setNotesL(e.target.value)}
             />
@@ -325,11 +337,17 @@ const App = () => {
               name="noteToggle"
               id="noteToggle"
               value={noteToggle}
-              placeholder="Please Enter Note"
+              placeholder="Enter Note"
               autoComplete="off"
               onChange={(e) => setNoteToggle(e.target.value)}
             />
 
+            <Justin
+              noteQuantifier={noteQuantifier}
+              setNoteQuantifier={setNoteQuantifier}
+              listall={listall}
+              setListAll={setListAll}
+            />
             {/* <label htmlFor="phone">Enter Phone Number</label>
             <input
               type="number"
@@ -440,21 +458,36 @@ const App = () => {
               unit={unit}
               setUnit={setUnit}
             />
-            <article className="grid grid-cols-2 gap-10">
+            <article className="grid grid-cols-1 gap-10">
               <Tax
                 sgsttax={sgsttax}
                 setSGstTax={setSGstTax}
                 total={total}
                 local={local}
                 setLocal={setLocal}
+                cgsttax={cgsttax}
+                setCgstTax={setCgstTax}
+                local1={local1}
+                setLocal1={setLocal1}
+                igsttax={igsttax}
+                setIgstTax={setIgstTax}
+                local2={local2}
+                setLocal2={setLocal2}
               />
-              <Tax1
+              {/* <Tax1
                 cgsttax={cgsttax}
                 setCgstTax={setCgstTax}
                 total={total}
                 local1={local1}
                 setLocal1={setLocal1}
-              />
+              /> */}
+              {/* <Tax3
+                igsttax={igsttax}
+                setIgstTax={setIgstTax}
+                total={total}
+                local2={local2}
+                setLocal2={setLocal2}
+              /> */}
             </article>
 
             <GrandTotal
@@ -462,6 +495,7 @@ const App = () => {
               local={local}
               local1={local1}
               grand={grand}
+              local2={local2}
               setGrand={setGrand}
             />
 

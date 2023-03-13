@@ -2,11 +2,11 @@ import React, { useEffect} from "react";
 
 const Tax1 = ({ total, cgsttax, setCgstTax, local1, setLocal1 }) => {
   useEffect(() => {
-    const taxGenerator = () => {
+    const taxGenerator1 = () => {
       const tax = total * (cgsttax / 100);
       return tax;
     };
-    setLocal1(taxGenerator());
+    setLocal1(taxGenerator1());
   }, [total, cgsttax,setLocal1]);
   const CTax=local1;
 
@@ -18,7 +18,7 @@ const Tax1 = ({ total, cgsttax, setCgstTax, local1, setLocal1 }) => {
         name="cgsttax"
         id="cgsttax"
         value={cgsttax}
-        placeholder="Please Enter The Qauntity"
+        placeholder="Enter CGST Value"
         autoComplete="off"
         onChange={(e) => setCgstTax(e.target.value)}
       />

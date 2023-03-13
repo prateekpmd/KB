@@ -1,7 +1,7 @@
 import React from "react";
 
-const GrandTotal = ({ total, local, local1, grand, setGrand }) => {
-  setGrand(total + local1 + local);
+const GrandTotal = ({ total, local, local1,local2, grand, setGrand }) => {
+  setGrand(total + local1 + local+ local2);
   const val=grand;
   return (
     <div className="flex items-end justify-end mr-6 ">

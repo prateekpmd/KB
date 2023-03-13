@@ -1,4 +1,5 @@
 import React from "react";
+import Iconss from "./Iconss";
 
 const Tables = ({
   description,
@@ -12,17 +13,23 @@ const Tables = ({
   local,
   local1,
   grand,
+  cgsttax,
+  sgsttax,
+  igsttax,
+  local2,
+  listall,
 }) => {
   const val = grand;
   const val1 = total;
   const sval = local;
   const cval = local1;
+  const ival = local2;
   let i = 1;
-  // 
+  //
+
   return (
     <div className="pb-4 mt-4">
       <table
-        
         className="border-collapse border border-slate-500 mb-4 table-auto lg:text-sm md:text-sm my-1"
         width="100%"
       >
@@ -108,51 +115,19 @@ const Tables = ({
           <div className="flex flex-col ">
             <h1 className="font-bold text-md mb-1">Terms And Conditions : </h1>
             <ul class=" ml-1 max-w-md space-y-1 lg:text-sm md:text-sm list-inside dark:text-gray-400">
-              <li class="flex items-center">
-                <svg
-                  class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                Prices quoted are discounted but Exclusive of GST 18%
-              </li>
-              <li class="flex items-center">
-                <svg
-                  class="w-4 h-4 mr-3 text-green-500 dark:text-green-400 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                Delivery with 4-6 weeks after confirmation of order.
-              </li>
-              <li class="flex items-center">
-                <svg
-                  class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                Payment within 30 days.
-              </li>
+              {listall &&
+                listall.map((l) => {
+                  return (
+                    <li key={l.id}>
+                      <div className="flex">
+                        <span className="mt-1">
+                          <Iconss />
+                        </span>
+                        <span>{l.noteQuantifier}</span>
+                      </div>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
         </div>
@@ -169,20 +144,34 @@ const Tables = ({
               </span>
             </h1>
           </div>
-          <div className="flex items-end justify-end ">
-            <h1 className="text-gray-800  text-sm">
-              <span className="font-medium ">
-                SGST: ₹ {sval.toLocaleString("en-US")}{" "}
-              </span>
-            </h1>
-          </div>
-          <div className="flex items-end justify-end  ">
-            <h1 className="text-gray-800  text-sm">
-              <span className="font-medium ">
-                CGST: ₹ {cval.toLocaleString("en-US")}
-              </span>
-            </h1>
-          </div>
+          {sgsttax && (
+            <div className="flex items-end justify-end ">
+              <h1 className="text-gray-800  text-sm">
+                <span className="font-medium ">
+                  SGST: ₹ {sval.toLocaleString("en-US")}{" "}
+                </span>
+              </h1>
+            </div>
+          )}
+
+          {cgsttax && (
+            <div className="flex items-end justify-end  ">
+              <h1 className="text-gray-800  text-sm">
+                <span className="font-medium ">
+                  CGST: ₹ {cval.toLocaleString("en-US")}
+                </span>
+              </h1>
+            </div>
+          )}
+          {igsttax && (
+            <div className="flex items-end justify-end  ">
+              <h1 className="text-gray-800  text-sm">
+                <span className="font-medium ">
+                  IGST: ₹ {ival.toLocaleString("en-US")}
+                </span>
+              </h1>
+            </div>
+          )}
           <div className=" mt-2 flex items-end justify-end ">
             <h1 className=" text-gray-800  text-md">
               <span className=" p-4 font-bold ">

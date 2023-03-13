@@ -98,7 +98,7 @@ const TableForm = ({
               name="serialNumber"
               id="serialNumber"
               value={serialNumber}
-              placeholder="Please Enter Serial Number"
+              placeholder="Enter Serial Number"
               autoComplete="off"
               required
               onChange={(e) => setSerialNumber(e.target.value)}
@@ -112,7 +112,7 @@ const TableForm = ({
               name="description"
               id="description"
               value={description}
-              placeholder="Please Enter The Product Description"
+              placeholder="Enter Product Description"
               autoComplete="off"
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -127,7 +127,7 @@ const TableForm = ({
               name="quantity"
               id="quantity"
               value={quantity}
-              placeholder="Please Enter The Qauntity Value"
+              placeholder="Enter Qauntity Value"
               autoComplete="off"
               onChange={(e) => setQuantity(e.target.value)}
             />
@@ -140,7 +140,7 @@ const TableForm = ({
               name="unit"
               id="unit"
               value={unit}
-              placeholder="Please Enter The Unit"
+              placeholder="Enter Unit Value"
               autoComplete="off"
               onChange={(e) => setUnit(e.target.value)}
             />
@@ -153,7 +153,7 @@ const TableForm = ({
               name="price"
               id="price"
               value={price}
-              placeholder="Please Enter Each Unit Rate (Rs.) "
+              placeholder="Enter Unit Rate (Rs.) "
               autoComplete="off"
               onChange={(e) => setPrice(e.target.value)}
             />
