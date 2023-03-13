@@ -14,7 +14,7 @@ import CompanyHeader from "./components/CompanyHeader";
 // import TermsAndCondition from "./components/TermsAndCondition";
 import ReactToPrint from "react-to-print";
 // import Tax3 from "./components/Tax3";
-import Justin from "./components/Justin";
+import Justin from "./components/Justin.js";
 
 // import { jsPDF } from "jspdf";
 // import PrintButton from "./components/PrintButton";
